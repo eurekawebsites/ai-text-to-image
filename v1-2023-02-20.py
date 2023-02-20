@@ -9,13 +9,11 @@ openai.api_key = OPENAI_API_KEY
 
 # Define the prompt for the model 
 prompt = st.text_input("prompt: ")
-number = st.text_input("number: ")
-n = int(number)
 
 # Generate text using the DALL-E model
 response = openai.Image.create(
     prompt=prompt,
-    n = n,
+    n = 1,
     size="1024x1024",
 )
 
@@ -23,7 +21,7 @@ response = openai.Image.create(
 image_url = response['data'][0]['url']
 
 # Display the generated image
-st.image(image_url, width=400)
+st.image(image_url, width=1024)
 
 # End of the app
 st.write("**THE END ✨**")
