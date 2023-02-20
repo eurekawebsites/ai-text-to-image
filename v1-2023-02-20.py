@@ -14,14 +14,14 @@ prompt = st.text_input("prompt: ")
 response = openai.Image.create(
     prompt=prompt,
     n = 1,
-    size="1024x1024",
+    size="512x512",
 )
 
 # Get the URL of the generated image
 image_url = response['data'][0]['url']
 
 # Display the generated image
-st.image(image_url, width=1024)
+st.image(image_url, width=512)
 
 # End of the app
 st.write("**THE END ✨**")
